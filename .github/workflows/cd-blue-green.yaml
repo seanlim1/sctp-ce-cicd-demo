@@ -1,10 +1,23 @@
 on:
   workflow_dispatch:
     inputs:
+      enableBlue:
+        description: 'Enables blue deployment'
+        required: true
+        type: choice
+        options:
+          - true
+          - false
+      enableGreen:
+        description: 'Enables green deployment'
+        required: true
+        type: choice
+        options:
+          - true
+          - false
       trafficDistribution:
         description: 'Traffic distribution of blue/green deployment'
         required: true
-        default: 'blue'
         type: choice
         options:
           - blue
@@ -39,4 +52,4 @@ jobs:
 
     - name: Terraform Apply
       id: apply
-      run: terraform apply -no-color -var 'traffic_distribution=${{ inputs.trafficDistribution }}' -auto-approve
+      run: terraform apply -no-color -var 'traffic_distribution=${{ inputs.trafficDistribution }}' -var 'enable_blue_env=${{ inputs.enableBlue }}' -var 'enable_green_env=${{ inputs.enableGreen }}' -auto-approve
