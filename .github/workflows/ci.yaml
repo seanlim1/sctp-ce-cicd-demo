@@ -3,7 +3,7 @@ on:
     branches: 
       - main
 
-name: CI for WebApp
+name: Integration (Simple) for WebApp
 
 jobs:
   ci:

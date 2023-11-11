@@ -1,6 +1,6 @@
 on: [workflow_dispatch]
 
-name: Simple CD for WebApp
+name: Deployment (Simple) for WebApp
 
 jobs:
   cd:
