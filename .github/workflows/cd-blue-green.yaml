@@ -39,4 +39,4 @@ jobs:
 
     - name: Terraform Apply
       id: apply
-      run: terraform apply -no-color -var 'traffic_distribution=${{ inputs.trafficDistribution }} ' -auto-approve
+      run: terraform apply -no-color -var 'traffic_distribution=${{ inputs.trafficDistribution }}' -auto-approve
